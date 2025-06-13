@@ -14,3 +14,23 @@ services:
       - 6277:6277
     pull_policy: always
     restart: always
+
+  playwright-mcp:
+    image: mcp/playwright
+    command:
+      - --port 8930
+    ports:
+      - 8930:8930
+    stdin_open: true
+    tty: true
+    pull_policy: always
+    restart: always
+
+  context7-mcp:
+    image: mcp/context7:latest
+    ports:
+      - 8932:8080
+    stdin_open: true
+    tty: true
+    pull_policy: always
+    restart: always
